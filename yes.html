@@ -12,7 +12,30 @@
             <div class="gif_container">
                 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW5sczNucWppZWZmN2g3c3ZsYWpucTFxc25ibXY5Z2xwZHY1cXVtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Hello Kitty animation">
             </div>
+            </div>
+            <!-- Add this line for the falling hearts -->
+            <div class="heart-fall-container"></div>
         </div>
-       
+
+        <script>
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 2 + 3 + 's'; // Random duration between 3 to 5 seconds
+                heart.innerText = '❤️'; // Or use an SVG or an image
+                document.querySelector('.heart-fall-container').appendChild(heart);
+        
+                // Remove heart after it falls down
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000); // Adjust timeout to match longest possible animation duration
+            }
+        
+            // Create new hearts at intervals
+            setInterval(createHeart, 300); // Adjust interval for more/less frequent hearts
+        </script>
+    
     </body> 
+
 </html>
