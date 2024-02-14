@@ -13,9 +13,35 @@ body {
 }
 
 #yesButton {
+    height: 70px;
+    width: 70px;
+    background: #f20044;
     position: absolute;
     margin-right: 150px;
+    transform: rotate(-45deg);
 }
+
+#yesButton: before{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    top: -50%;
+    border-radius: 50px;
+}
+
+#yesButton: before{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    right: -50%;
+    border-radius: 50px;
+}
+
+
 
 .header_text {
     font-family: 'Nunito';
