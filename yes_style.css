@@ -1,88 +1,31 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background-color: rgb(255, 31, 70);
-}
-
-#noButton, #yesButton {    
+/* Add to your existing CSS file */
+.heart-fall-container {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-#noButton {
-    margin-left: 150px;
+.heart {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    opacity: 0.6;
+    color: red;
+    /* Use a heart-shaped emoji or an SVG for content */
+    content: '❤️';
+    animation: fall linear infinite;
 }
 
-#yesButton {    
-    margin-right: 150px;
-}
-
-.header_text {
-    font-family: 'Nunito';
-    font-size: 40px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.btn {
-    background-color: #fbeee0;
-    border: 2px solid #422800;
-    border-radius: 30px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 0 18px;
-    line-height: 50px;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    transition: transform 0.1s; /* Added for smooth transition */
-}
-
-.btn:hover {
-    background-color: #fff;
-}
-
-.btn:active {
-    box-shadow: #422800 2px 2px 0 0;
-    transform: translate(2px, 2px);
-}
-
-.gif_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media only screen and (max-width: 320px) and (max-height: 568px) {
-    /* Your existing media queries for smaller devices */
-}
-
-@media only screen and (max-width: 414px) and (max-height: 736px) {
-    /* Your existing media queries for slightly larger devices */
-}
-
-@media (min-width: 768px) {
-    .btn {
-        min-width: 120px;
-        padding: 0 25px;
+@keyframes fall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 110%;
     }
 }
